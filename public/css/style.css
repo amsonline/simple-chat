@@ -1,0 +1,209 @@
+* {
+    box-sizing: border-box;
+}
+body {
+    padding-top: 50px;
+    background: #96c0ff;
+}
+.page {
+    width: 700px;
+    margin: 0 auto;
+    background: white;
+    border: 1px solid #3577ff;
+    display: none;
+}
+
+.header {
+    height: 40px;
+    padding-top: 10px;
+    text-align: center;
+    color: #eee;
+    background: #3577ff;
+    position: relative;
+}
+
+.header .logout {
+    position: absolute;
+    top: 8px;
+    right: 8px;
+    width: 24px;
+    height: 24px;
+    cursor: pointer;
+}
+
+.header .logout img {
+    width: 24px;
+    height: 24px;
+}
+
+.page > .content {
+    display: flex;
+    height: calc(90vh - 100px);
+}
+
+.sidebar {
+    flex: 1;
+    min-width: 200px;
+    max-width: 200px;
+    width: 200px;
+    border-right: 1px solid #3577ff;
+}
+.sidebar .title {
+    border-bottom: 1px solid #3577ff;
+    text-align: center;
+    position: relative;
+}
+
+.sidebar .title .create-group {
+    color: #1976d2;
+    font-weight: bold;
+    position: absolute;
+    top: 0;
+    right: 5px;
+}
+
+.group-box {
+    height: 40px;
+    display: flex;
+    padding: 3px;
+    margin-bottom: 2px;
+    border-bottom: 1px solid #c4dbfc;
+}
+
+.group-box.active {
+    background: #1976d2;
+    color: white;
+}
+
+#sample-group-box,#sample-message-box {
+    display: none;
+}
+
+.group-box .group-name {
+    flex: 1;
+}
+
+.group-box .group-join {
+    flex: 1;
+    min-width: 50px;
+    max-width: 50px;
+    width: 50px;
+    text-align: center;
+}
+
+.group-box .group-join .group-join-button {
+    margin: 3px;
+    background: #1976d2;
+    color: white;
+    border-radius: 3px;
+}
+
+.messages {
+    flex: 1;
+    background: linear-gradient(to bottom, #c4dbfc 0%, white 100%);
+    position: relative;
+    padding: 5px;
+    display: flex;
+    flex-direction: column;
+    padding-bottom: 30px;
+}
+
+.messages .messages-list {
+    flex: 1;
+    height: calc(100% - 30px);
+    overflow: auto
+}
+
+.messages .message-bubble {
+    width: 70%;
+    border: 1px solid rgba(0,0,0,0.2);
+    border-radius: 10px;
+    padding: 5px 10px;
+    background: linear-gradient(to bottom, lightyellow 0, white 100%);
+    margin-bottom: 2px;
+}
+
+.message-bubble.sent {
+    background: linear-gradient(to bottom, lightyellow 0, lightgreen 100%);
+    margin-left: 30%;
+}
+
+.message-bubble .sender {
+    font-size: smaller;
+    font-weight: bold;
+    padding-bottom: 5px;
+}
+
+.message-bubble .content {
+    padding: 5px 0;
+    min-height: 60px;
+}
+
+.message-bubble .date {
+    text-align: right;
+    font-style: italic;
+    font-size: smaller;
+    color: rgba(0,0,0,0.7)
+}
+
+.add-message {
+    height: 30px;
+    position: absolute;
+    bottom: 0;
+    padding: 5px;
+    left: 0;
+    right: 0;
+}
+
+.add-message input {
+    width: calc(100% - 70px);
+}
+
+.add-message button {
+    width: 65px;
+    background: #1976d2;
+    color: white;
+    border: 1px solid #1976d2;
+    border-radius: 3px;
+}
+
+.no-group-selected {
+    position: absolute;
+    background: rgba(255,255,255,0.6);
+    padding: 5px;
+    width: 300px;
+    height: 30px;
+    border-radius: 3px;
+    text-align: center;
+    top: calc(50% - 15px);
+    left: calc(50% - 150px);
+    display: none
+}
+
+.messages.no-group .no-group-selected {
+    display: block;
+}
+
+.messages.no-group .add-message {
+    display: none;
+}
+
+.backdrop {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0,0,0,0.7)
+}
+
+.backdrop .login-box {
+    background: white;
+    position: absolute;
+    width: 250px;
+    height: 120px;
+    top: calc(50% - 60px);
+    left: calc(50% - 125px);
+    text-align: center;
+    line-height: 30px;
+}
